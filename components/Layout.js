@@ -1,11 +1,10 @@
 import Head from 'next/head'; // Head + meta
-import Link from 'next/link'; // Routing
 import state from 'utils/state'; // Global state
 import NextNProgress from 'nextjs-progressbar'; // Navigation progress bar
-import Jazzicon, { jsNumberForAddress } from 'react-jazzicon'; // Address avatar
 import { Box } from '@mui/system';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import WalletConnectButton from './WalletConnectButton';
 
 export default function Layout({ children }) {
   return (
@@ -78,9 +77,6 @@ function Meta() {
 
 // Header (+ auth management)
 function Header() {
-  // Collect address and unlock function from global state
-  const { address, unlock } = state.useContainer();
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -97,28 +93,7 @@ function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Personhood Passport
           </Typography>
-          <Button color="inherit" onClick={unlock}>
-            {address ? (
-              // If authenticated
-              <>
-                {/* Render avatar */}
-                <Jazzicon diameter={16} seed={jsNumberForAddress(address)} />
-                {/* Render address */}
-                <span>
-                  {address.startsWith('0x')
-                    ? // If ETH address, render truncated address
-                      address.substr(0, 6) +
-                      '...' +
-                      address.slice(address.length - 4)
-                    : // Else, render ENS name
-                      address}
-                </span>
-              </>
-            ) : (
-              // Else, display Connect Wallet prompt
-              'Connect Wallet'
-            )}
-          </Button>
+          <WalletConnectButton />
         </Toolbar>
       </AppBar>
     </Box>
