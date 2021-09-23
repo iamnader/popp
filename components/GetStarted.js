@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Layout from 'components/Layout';
-import passportPng from 'public/images/passport.png';
 import WalletConnectButton from 'components/WalletConnectButton';
 
 const GetStarted = () => {
@@ -18,8 +17,8 @@ const GetStarted = () => {
           Proof of Personhood Passport
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-          <Image
-            src={passportPng}
+          <img
+            src="./images/passportSmall.png"
             alt="Personhood Passport"
             width={128}
             height={171}
