@@ -1,10 +1,10 @@
 import GetStarted from 'components/GetStarted';
 import Layout from 'components/Layout';
 import ScoreCard from 'components/ScoreCard';
-import state from 'utils/state';
+import { eth } from 'utils/state/eth';
 
 export default function Home() {
-  const { address } = state.useContainer();
+  const { address } = eth.useContainer();
 
   return <Layout>{address ? <ScoreCard /> : <GetStarted />}</Layout>;
 }

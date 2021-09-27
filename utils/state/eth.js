@@ -30,7 +30,7 @@ function useETHState() {
   // --> Lifecycle: on mount
   useEffect(() => {
     async function doOnboard() {
-      // Onboard provider
+      // Onboard providerexport
       const onboard = Onboard({
         // Ethereum network
         networkId: parseInt(process.env.NEXT_PUBLIC_NETWORK_ID),
@@ -92,5 +92,4 @@ function useETHState() {
 }
 
 // Create unstated-next container
-const state = createContainer(useETHState);
-export default state;
+export const eth = createContainer(useETHState);

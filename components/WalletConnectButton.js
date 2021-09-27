@@ -1,13 +1,13 @@
 import { Button } from '@mui/material';
 import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
-import state from 'utils/state';
+import { eth } from 'utils/state/eth';
 
 const WalletConnectButton = ({
   color = 'inherit',
   labelText = 'Connect Wallet',
   variant = '',
 }) => {
-  const { address, unlock } = state.useContainer();
+  const { address, unlock } = eth.useContainer();
 
   return (
     <Button variant={variant} color={color} onClick={unlock}>

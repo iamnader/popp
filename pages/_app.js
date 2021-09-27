@@ -1,4 +1,4 @@
-import state from 'utils/state'; // State management
+import StateProvider from 'utils/state/index'; // State management
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -21,9 +21,9 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <state.Provider>
+        <StateProvider>
           <Component {...pageProps} />
-        </state.Provider>
+        </StateProvider>
       </ThemeProvider>
     </CacheProvider>
   );

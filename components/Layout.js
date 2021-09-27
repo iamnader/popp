@@ -1,5 +1,4 @@
 import Head from 'next/head'; // Head + meta
-import state from 'utils/state'; // Global state
 import NextNProgress from 'nextjs-progressbar'; // Navigation progress bar
 import { Box } from '@mui/system';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
