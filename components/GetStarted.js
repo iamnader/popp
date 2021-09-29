@@ -1,7 +1,8 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import WalletConnectButton from 'components/WalletConnectButton';
+import CeramicConnectButton from './CeramicConnectButton';
+// import WalletConnectButton from 'components/WalletConnectButton';
 
 const GetStarted = () => {
   return (
@@ -22,7 +23,7 @@ const GetStarted = () => {
           personhood identity for the web3 space.
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-          <WalletConnectButton
+          <CeramicConnectButton
             labelText="Connect Your Wallet to Get Started!"
             variant="contained"
             color="primary"

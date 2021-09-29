@@ -3,7 +3,8 @@ import NextNProgress from 'nextjs-progressbar'; // Navigation progress bar
 import { Box } from '@mui/system';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import WalletConnectButton from './WalletConnectButton';
+import CeramicConnectButton from './CeramicConnectButton';
+// import WalletConnectButton from './WalletConnectButton';
 
 export default function Layout({ children }) {
   return (
@@ -92,7 +93,7 @@ function Header() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Personhood Passport
           </Typography>
-          <WalletConnectButton />
+          <CeramicConnectButton />
         </Toolbar>
       </AppBar>
     </Box>
