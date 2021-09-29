@@ -6,7 +6,7 @@ const CeramicConnectButton = ({
   labelText = 'Connect Wallet',
   variant = '',
 }) => {
-  const { name, ceramic, authenticate, authenticated } =
+  const { name, ceramic, authenticate, authenticating, authenticated } =
     ceramicState.useContainer();
 
   return (
@@ -17,6 +17,8 @@ const CeramicConnectButton = ({
           {/* Render name or DID */}
           <span>{name ? name : ceramic.did.id}</span>
         </>
+      ) : authenticating ? (
+        'Connecting...'
       ) : (
         // Else, display Connect Wallet prompt
         labelText

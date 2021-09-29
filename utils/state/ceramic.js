@@ -16,6 +16,7 @@ function useCeramicState() {
       await ceramic.authenticate(authProvider);
 
       if (ceramic.isAuthenticated && !name) {
+        console.log(ceramic.idx.get('basicProfile'));
         ceramic.idx.get('basicProfile').then((profile) => {
           if (profile && profile.name) {
             setName(profile.name);
